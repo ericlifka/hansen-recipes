@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "generate-site": "npx scripts/generate-site.js"
+    "generate-site": "node scripts/generate-site.js"
   },
   "dependencies": {
     "pdf-parse": "^1.1.1"

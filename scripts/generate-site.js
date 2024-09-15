@@ -40,63 +40,15 @@ const generateRecipe = recipe => `
   </details>`
 
 const run = async () => {
-  await copyFile("./site-template/script.js", "./website/script.js")
-  await copyFile("./site-template/style.css", "./website/style.css")
+  await copyFile("./site-template/script.js", "./docs/script.js")
+  await copyFile("./site-template/style.css", "./docs/style.css")
 
   let html_template = await readFile("./site-template/index.html", { encoding: "utf-8" })
   let [head, foot] = html_template.split("{{--CONTENT--}}")
   let content = generateContent(await loadRecipes())
   let html = [head, content, foot].join('\n')
 
-  await writeFile(`./website/index.html`, html)
+  await writeFile(`./docs/index.html`, html)
 }
-
-`
-<main>
-    <details>
-      <summary>Apps</summary>
-      
-      <details>
-        <summary>Recipe 1</summary>
-        <ul>
-          <li>ingredient 1</li>
-          <li>ingredient 2</li>
-          <li>step 1</li>
-          <li>step 2</li>
-        </ul>
-      </details>
-      <details>
-        <summary>Recipe 2</summary>
-        <ul>
-          <li>ingredient 1</li>
-          <li>ingredient 2</li>
-          <li>step 1</li>
-          <li>step 2</li>
-        </ul>
-      </details>
-    </details>
-    <details>
-      <summary>Bread</summary>
-      <details>
-        <summary>Recipe 1</summary>
-        <ul>
-          <li>ingredient 1</li>
-          <li>ingredient 2</li>
-          <li>step 1</li>
-          <li>step 2</li>
-        </ul>
-      </details>
-      <details>
-        <summary>Recipe 2</summary>
-        <ul>
-          <li>ingredient 1</li>
-          <li>ingredient 2</li>
-          <li>step 1</li>
-          <li>step 2</li>
-        </ul>
-      </details>
-    </details>
-  </main>
-  `
 
 run()
