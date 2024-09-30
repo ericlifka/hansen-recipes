@@ -1,6 +1,18 @@
 {
-  "name": "Peanut Butter Pie\n1 baked pie shell\n2/3 c. sugar          \n2 T. butter\n1 c. powdered sugar        \n1/4 t. salt\n1/4 t. vanilla\n1/2 c. peanut butter             \n2 c. milk, scalded\n3 eggs, separated\n1/4 c. cornstarch",
+  "name": "Peanut Butter Pie",
   "ingredients": [
+    "1 baked pie shell",
+    "2/3 cups sugar",
+    "2 Tbsp butter",
+    "1 cups powdered sugar",
+    "1/4 tsp salt",
+    "1/4 tsp vanilla",
+    "1/2 cups peanut butter",
+    "2 cups milk, scalded",
+    "3 eggs, separated",
+    "1/4 cups cornstarch"
+  ],
+  "instructions": [
     "Heat oven to 325.",
     "Combine sugar, peanut butter, blending until mixture has consistency of biscuit mix.",
     "Spread half of mixture in pie shell.",
@@ -15,8 +27,5 @@
     "Top mixture in shell with meringue.",
     "Sprinkle remaining peanut butter over meringue.",
     "Bake until meringue is brown."
-  ],
-  "instructions": [
-    ""
   ]
 }

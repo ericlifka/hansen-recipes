@@ -4,15 +4,11 @@ const notDotFile = name => name[0] != '.'
 const getGroups = async () => (await readdir("./recipes-text")).filter(notDotFile)
 const getRecipes = async group => (await readdir(`./recipes-text/${group}`)).filter(notDotFile)
 
-const sanitizeIngredient = ingredient => ingredient
+const sanitizeLine = line => line
   .trim()
   .replaceAll(/ t\. /g, ' tsp ')
   .replaceAll(/ T\. /g, ' Tbsp ')
   .replaceAll(/ c\. /g, ' cups ')
-  .replaceAll(/  +/g, ' ')
-
-const sanitizeInstruction = instruction => instruction
-  .trim()
   .replaceAll(/  +/g, ' ')
 
 const processGroup = async group => {
@@ -23,8 +19,8 @@ const processGroup = async group => {
     let [ name, ingredients, ...instructions ] = text.split('\n\n')
     let json = {
       name: name.trim(),
-      ingredients: ingredients.split('\n').map(sanitizeIngredient),
-      instructions: instructions.join('\n').split('\n').map(sanitizeInstruction),
+      ingredients: ingredients.split('\n').map(sanitizeLine),
+      instructions: instructions.join('\n').split('\n').map(sanitizeLine).filter( s => s != '' ),
     }
     await writeFile(`./recipes-json/${group}/${recipe}.json`, JSON.stringify(json, null, 2), { flag: "wx" })
   }
