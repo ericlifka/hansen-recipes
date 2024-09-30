@@ -1,0 +1,20 @@
+{
+  "name": "Banana Bread",
+  "ingredients": [
+    "1/2 cups butter",
+    "1 cups sugar",
+    "2 eggs",
+    "2 cups flour",
+    "1/2 cups milk",
+    "1 tsp soda",
+    "3 bananas mashed"
+  ],
+  "instructions": [
+    "Cream butter and sugar.",
+    "Add eggs.",
+    "Add bananas.",
+    "Add soda.",
+    "Add flour and milk alternately.",
+    "Bake in greased loaf pan 1 hour 15 min. at 350º."
+  ]
+}

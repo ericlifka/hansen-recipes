@@ -1,0 +1,21 @@
+{
+  "name": "Pizza Burgers",
+  "ingredients": [
+    "1-1 1/2 lb. hamburger",
+    "1 small can grated spam",
+    "1/2 tsp oregano",
+    "1 onion",
+    "1 can pizza sauce",
+    "buns",
+    "cheese slices - mozarella or american or grated"
+  ],
+  "instructions": [
+    "Brown hamburger.",
+    "Add spam, oregano, onion and pizza sauce.",
+    "Simmer for a few minutes until onion is tender.",
+    "Split buns and place halves on a cookie sheet.",
+    "Top each bun half with meat mix, top with cheese.",
+    "Bake at 350 for 20 minutes.",
+    "You may want to slowly add the pizza sauce so it doesn’t become soupy."
+  ]
+}

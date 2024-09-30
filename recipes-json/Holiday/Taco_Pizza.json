@@ -1,0 +1,19 @@
+{
+  "name": "Taco Pizza",
+  "ingredients": [
+    "8 oz. cream cheese",
+    "1 tomato, chopped",
+    "8 oz. sour cream",
+    "lettuce, chopped",
+    "1 pkg. taco seasoning",
+    "shredded cheese",
+    "black olive slices",
+    "onion"
+  ],
+  "instructions": [
+    "Mix cream cheese, sour cream and taco seasoning.",
+    "Spread onto large plate.",
+    "Then layer lettuce, tomato, onion, cheese, and olives.",
+    "Serve with taco chips."
+  ]
+}

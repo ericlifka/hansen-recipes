@@ -1,0 +1,15 @@
+{
+  "name": "Philly Cheese Steak Sandwich",
+  "ingredients": [
+    "italian or hoagie rolls",
+    "cheese whiz or provolone",
+    "deli roast beef",
+    "onions",
+    "green peppers",
+    "mushrooms (optional)"
+  ],
+  "instructions": [
+    "Sauté onions, green peppers, and mushrooms.",
+    "Put the roast beef on a bun, top with veggies and cheese and bake at 400 for 5-10 minutes until cheese is melted."
+  ]
+}

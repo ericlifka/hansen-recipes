@@ -1,0 +1,14 @@
+{
+  "name": "Goose",
+  "ingredients": [
+    "1 goose",
+    "celery",
+    "onion",
+    "apple"
+  ],
+  "instructions": [
+    "Stuff thawed goose with celery, onion, apple.",
+    "Bake 400 for 3 hour with aluminum foil over goose.",
+    "Some cookbooks heat oven to 450, then turn down to 350."
+  ]
+}
