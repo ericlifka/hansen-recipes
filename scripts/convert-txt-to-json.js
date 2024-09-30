@@ -1,8 +1,8 @@
 const { rm, readdir, mkdir, readFile, writeFile } = require('node:fs/promises');
 
-const notDotFile = name => name[0] != '.'
-const getGroups = async () => (await readdir("./recipes-text")).filter(notDotFile)
-const getRecipes = async group => (await readdir(`./recipes-text/${group}`)).filter(notDotFile)
+const noDotFile = name => name[0] != '.'
+const getGroups = async () => (await readdir("./recipes-text")).filter(noDotFile)
+const getRecipes = async group => (await readdir(`./recipes-text/${group}`)).filter(noDotFile)
 
 const sanitizeLine = line => line
   .trim()
