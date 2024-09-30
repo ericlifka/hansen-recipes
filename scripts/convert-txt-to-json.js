@@ -9,9 +9,11 @@ const sanitizeIngredient = ingredient => ingredient
   .replaceAll(/ t\. /g, ' tsp ')
   .replaceAll(/ T\. /g, ' Tbsp ')
   .replaceAll(/ c\. /g, ' cups ')
+  .replaceAll(/  +/g, ' ')
 
 const sanitizeInstruction = instruction => instruction
   .trim()
+  .replaceAll(/  +/g, ' ')
 
 const processGroup = async group => {
   await mkdir(`./recipes-json/${group}`)
