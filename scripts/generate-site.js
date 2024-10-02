@@ -17,33 +17,15 @@ const loadRecipes = async () => {
   return recipes
 }
 
-// const generateContent = recipes => `
-//   <main>
-//     ${recipes.map( group => `
-//       <details>
-//         <summary>${group.name}</summary>
-//         ${group.recipes.map(generateRecipe).join('')}
-//       </details>
-//     `).join('')}
-//   </main>`
-
-// const generateRecipe = recipe => `
-//   <details>
-//     <summary>${recipe.name}</summary>
-//     <ul>
-//       ${recipe.steps.map( step => `
-//         <li>${step}</li>
-//       `).join('')}
-//     </ul>
-//   </details>`
-
 const directoryContent = recipes => `
-<h1>Karen Hansen's Recipes</h1>
+<h1>Karen's Recipes</h1>
 <nav>
-  <ul>
-    ${Object.keys(recipes).map( category =>
-      `<li><a href="./${category}/index.html">${category}</a></li>`
-    ).join('\n')}
+  <ul class="category-list">
+    ${Object.keys(recipes).map( category => `
+      <a href="./${category}/index.html">
+        <li class="category-link" data-category="${category}">${category}</li>
+      </a>
+    `).join('\n')}
   </ul>
 </nav>
 `
@@ -59,13 +41,14 @@ const createDirectoryPage = async (recipes, template) => {
 }
 
 const categoryContent = (category, recipes) => `
-<h1>Karen Hansen's Recipes</h1>
-<h2>${category}</h2>
+<h1>${category}</h1>
 <nav>
-  <ul>
-    ${recipes[category].map( recipe =>
-      `<li><a href="./${recipe.name}.html">${recipe.name}</a></li>`
-    ).join('\n')}
+  <ul class="recipe-list">
+    ${recipes[category].map( recipe => `
+      <a href="./${recipe.name}.html">
+        <li class="recipe-link">${recipe.name}</li>
+      </a>
+    `).join('\n')}
   </ul>
 </nav>
 `
@@ -83,19 +66,19 @@ const createCategoryPage = async (category, recipes, template) => {
 
 const recipeContent = (recipe) => `
 <h3>${recipe.name}</h3>
-<main>
-  <section>
+<main class="recipe-card">
+  <section class="ingredients">
     <ol>
-      ${recipe.ingredients.map( ingredient =>
-        `<li>${ingredient}</li>`
-      ).join('\n')}
+      ${recipe.ingredients.map( ingredient => `
+        <li>${ingredient}</li>
+      `).join('\n')}
     </ol>
   </section>
-  <section>
+  <section class="instructions">
     <ul>
-      ${recipe.instructions.map( instruction =>
-        `<li>${instruction}</li>`
-      ).join('\n')}
+      ${recipe.instructions.map( instruction => `
+        <li>${instruction}</li>
+      `).join('\n')}
     </ul>
   </section>
 </main>
