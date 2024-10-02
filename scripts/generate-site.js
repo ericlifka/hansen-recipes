@@ -94,7 +94,7 @@ const createRecipePage = async (recipe, category, template) => {
 const run = async () => {
   await rm('./docs/recipes', { recursive: true })
   await mkdir(`./docs/recipes`)
-  let template = await readFile("./site-template/template.html", { encoding: "utf-8" })
+  let template = await readFile("./site-template.html", { encoding: "utf-8" })
   let recipes = await loadRecipes()
 
   createDirectoryPage(recipes, template)
