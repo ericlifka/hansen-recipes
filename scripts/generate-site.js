@@ -22,7 +22,7 @@ const directoryContent = recipes => `
 <nav>
   <ul class="category-list">
     ${Object.keys(recipes).map( category => `
-      <a href="./${category}/index.html">
+      <a href="./recipes/${category}.html">
         <li class="category-link" data-category="${category}">${category}</li>
       </a>
     `).join('\n')}
@@ -31,10 +31,9 @@ const directoryContent = recipes => `
 `
 
 const createDirectoryPage = async (recipes, template) => {
-  await copyFile("./site-template/styles.css", "./docs/styles.css")
-
   let html = template
     .split("{{--TITLE--}}").join("Karen's Recipes")
+    .split("{{--STYLES--}}").join("./static/styles.css")
     .split("{{--CONTENT--}}").join(directoryContent(recipes))
 
   await writeFile(`./docs/index.html`, html)
@@ -45,7 +44,7 @@ const categoryContent = (category, recipes) => `
 <nav>
   <ul class="recipe-list">
     ${recipes[category].map( recipe => `
-      <a href="./${recipe.name}.html">
+      <a href="./${category}/${recipe.name}.html">
         <li class="recipe-link">${recipe.name}</li>
       </a>
     `).join('\n')}
@@ -54,14 +53,13 @@ const categoryContent = (category, recipes) => `
 `
 
 const createCategoryPage = async (category, recipes, template) => {
-  await mkdir(`./docs/${category}`)
-  await copyFile(`./site-template/styles.css`, `./docs/${category}/styles.css`)
-
+  await mkdir(`./docs/recipes/${category}`)
   let html = template
     .split("{{--TITLE--}}").join(`Karen's ${category}`)
+    .split("{{--STYLES--}}").join("../static/styles.css")
     .split("{{--CONTENT--}}").join(categoryContent(category, recipes))
 
-  await writeFile(`./docs/${category}/index.html`, html)
+  await writeFile(`./docs/recipes/${category}.html`, html)
 }
 
 const recipeContent = (recipe) => `
@@ -87,14 +85,15 @@ const recipeContent = (recipe) => `
 const createRecipePage = async (recipe, category, template) => {
   let html = template
     .split("{{--TITLE--}}").join(recipe.name)
+    .split("{{--STYLES--}}").join("../../static/styles.css")
     .split("{{--CONTENT--}}").join(recipeContent(recipe))
 
-  await writeFile(`./docs/${category}/${recipe.name}.html`, html)
+  await writeFile(`./docs/recipes/${category}/${recipe.name}.html`, html)
 }
 
 const run = async () => {
-  await rm('./docs', { recursive: true })
-  await mkdir(`./docs`)
+  await rm('./docs/recipes', { recursive: true })
+  await mkdir(`./docs/recipes`)
   let template = await readFile("./site-template/template.html", { encoding: "utf-8" })
   let recipes = await loadRecipes()
 
