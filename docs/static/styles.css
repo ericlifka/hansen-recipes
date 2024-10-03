@@ -4,11 +4,11 @@ html, body, main {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 14px;
-  background-color: #EEFCF7;
+  background-color: #f3f3f3;
 }
 
 h1 {
-  padding:12px;
+  padding: 16px;
   margin: 0;
   background-color: #0b4630;
   color: #fff;
@@ -23,13 +23,130 @@ ul.category-list {
   padding: 12px;
 }
 ul.category-list li.category-link {
-  border: 2px solid grey;
-  border-radius: 10px;
+  border: 3px solid grey;
+  /* box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75); */
+  border-radius: 12px;
   margin-bottom: 12px;
-  padding: 12px 16px;
+  padding: 16px;
   list-style: none;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
 }
 ul.category-list a {
   color: inherit;
   text-decoration: none;
+}
+
+h1,
+ul.category-list li.category-link {
+  background-size: cover;
+  color: white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+main[data-category] h1 {
+  padding: 36px;
+}
+
+main[data-category="Apps"] { background-color: rgb(228, 248, 255); }
+main[data-category="Apps"] h1,
+ul.category-list li.category-link[data-category="Apps"] {
+  background-image: url("images/apps.png");
+  border-color: rgb(140, 224, 251);
+}
+
+main[data-category="Beef"] { background-color: rgb(255, 227, 227); }
+main[data-category="Beef"] h1,
+ul.category-list li.category-link[data-category="Beef"] {
+  background-image: url("images/beef.jpg");
+  border-color: rgb(250, 72, 72);
+}
+
+main[data-category="Bread"] { background-color: rgb(240, 234, 222); }
+main[data-category="Bread"] h1,
+ul.category-list li.category-link[data-category="Bread"] {
+  background-image: url("images/bread.png");
+  border-color: rgb(136, 82, 0);
+}
+
+main[data-category="Breakfast"] { background-color: rgb(252, 248, 225); }
+main[data-category="Breakfast"] h1,
+ul.category-list li.category-link[data-category="Breakfast"] {
+  background-image: url("images/breakfast.png");
+  border-color: rgb(251, 218, 0);
+}
+
+main[data-category="Chicken"] { background-color: rgb(255, 227, 254); }
+main[data-category="Chicken"] h1,
+ul.category-list li.category-link[data-category="Chicken"] {
+  background-image: url("images/chicken.jpg");
+  border-color: rgb(255, 98, 247);
+}
+
+main[data-category="Dessert"] { background-color: rgb(242, 226, 250); }
+main[data-category="Dessert"] h1,
+ul.category-list li.category-link[data-category="Dessert"] {
+  background-image: url("images/dessert.jpg");
+  border-color: rgb(152, 0, 228);
+}
+
+main[data-category="Fish"] { background-color: rgb(232, 228, 255); }
+main[data-category="Fish"] h1,
+ul.category-list li.category-link[data-category="Fish"] {
+  background-image: url("images/fish.png");
+  border-color: rgb(54, 24, 251);
+}
+
+main[data-category="Holiday"] { background-color: rgb(226, 249, 227); }
+main[data-category="Holiday"] h1,
+ul.category-list li.category-link[data-category="Holiday"] {
+  background-image: url("images/holiday.png");
+  border-color: rgb(0, 188, 3);
+}
+
+main[data-category="Pork"] { background-color: rgb(255, 227, 250); }
+main[data-category="Pork"] h1,
+ul.category-list li.category-link[data-category="Pork"] {
+  background-image: url("images/pork.png");
+  border-color: rgb(249, 66, 215);
+}
+
+main[data-category="Salad"] { background-color: rgb(236, 254, 233); }
+main[data-category="Salad"] h1,
+ul.category-list li.category-link[data-category="Salad"] {
+  background-image: url("images/salad.jpg");
+  border-color: rgb(142, 252, 125);
+}
+
+main[data-category="Sandwhiches"] { background-color: rgb(252, 234, 202); }
+main[data-category="Sandwhiches"] h1,
+ul.category-list li.category-link[data-category="Sandwhiches"] {
+  background-image: url("images/sandwhiches.png");
+  border-color: rgb(255, 175, 27);
+}
+
+main[data-category="Sides"] { background-color: rgb(246, 212, 252); }
+main[data-category="Sides"] h1,
+ul.category-list li.category-link[data-category="Sides"] {
+  background-image: url("images/sides.png");
+  border-color: rgb(229, 98, 255);
+}
+
+main[data-category="Soup"] { background-color: rgb(255, 224, 229); }
+main[data-category="Soup"] h1,
+ul.category-list li.category-link[data-category="Soup"] {
+  background-image: url("images/soup.jpg");
+  border-color: rgb(255, 85, 113);
+}
+
+main[data-category="Veggies"] { background-color: rgb(233, 255, 234); }
+main[data-category="Veggies"] h1,
+ul.category-list li.category-link[data-category="Veggies"] {
+  background-image: url("images/veggies.png");
+  border-color: rgb(0, 119, 6);
 }

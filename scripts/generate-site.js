@@ -18,16 +18,17 @@ const loadRecipes = async () => {
 }
 
 const directoryContent = recipes => `
-<h1>Karen's Recipes</h1>
-<nav>
-  <ul class="category-list">
-    ${Object.keys(recipes).map( category => `
-      <a href="./recipes/${category}.html">
-        <li class="category-link" data-category="${category}">${category}</li>
-      </a>
-    `).join('\n')}
-  </ul>
-</nav>
+<main>
+  <nav>
+    <ul class="category-list">
+      ${Object.keys(recipes).map( category => `
+        <a href="./recipes/${category}.html">
+          <li class="category-link" data-category="${category}">${category}</li>
+        </a>
+      `).join('\n')}
+    </ul>
+  </nav>
+</main>
 `
 
 const createDirectoryPage = async (recipes, template) => {
@@ -40,16 +41,18 @@ const createDirectoryPage = async (recipes, template) => {
 }
 
 const categoryContent = (category, recipes) => `
-<h1>${category}</h1>
-<nav>
-  <ul class="recipe-list">
-    ${recipes[category].map( recipe => `
-      <a href="./${category}/${recipe.name}.html">
-        <li class="recipe-link">${recipe.name}</li>
-      </a>
-    `).join('\n')}
-  </ul>
-</nav>
+<main data-category="${category}">
+  <h1>${category}</h1>
+  <nav>
+    <ul class="recipe-list">
+      ${recipes[category].map( recipe => `
+        <a href="./${category}/${recipe.name}.html">
+          <li class="recipe-link">${recipe.name}</li>
+        </a>
+      `).join('\n')}
+    </ul>
+  </nav>
+</main>
 `
 
 const createCategoryPage = async (category, recipes, template) => {
@@ -62,23 +65,25 @@ const createCategoryPage = async (category, recipes, template) => {
   await writeFile(`./docs/recipes/${category}.html`, html)
 }
 
-const recipeContent = (recipe) => `
-<h3>${recipe.name}</h3>
-<main class="recipe-card">
-  <section class="ingredients">
-    <ol>
-      ${recipe.ingredients.map( ingredient => `
-        <li>${ingredient}</li>
-      `).join('\n')}
-    </ol>
-  </section>
-  <section class="instructions">
-    <ul>
-      ${recipe.instructions.map( instruction => `
-        <li>${instruction}</li>
-      `).join('\n')}
-    </ul>
-  </section>
+const recipeContent = (recipe, category) => `
+<main data-category="${category}">
+  <h3>${recipe.name}</h3>
+  <content class="recipe-card">
+    <section class="ingredients">
+      <ol>
+        ${recipe.ingredients.map( ingredient => `
+          <li>${ingredient}</li>
+        `).join('\n')}
+      </ol>
+    </section>
+    <section class="instructions">
+      <ul>
+        ${recipe.instructions.map( instruction => `
+          <li>${instruction}</li>
+        `).join('\n')}
+      </ul>
+    </section>
+  </content>
 </main>
 `
 
@@ -86,7 +91,7 @@ const createRecipePage = async (recipe, category, template) => {
   let html = template
     .split("{{--TITLE--}}").join(recipe.name)
     .split("{{--STYLES--}}").join("../../static/styles.css")
-    .split("{{--CONTENT--}}").join(recipeContent(recipe))
+    .split("{{--CONTENT--}}").join(recipeContent(recipe, category))
 
   await writeFile(`./docs/recipes/${category}/${recipe.name}.html`, html)
 }
