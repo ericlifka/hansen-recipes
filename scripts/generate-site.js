@@ -4,6 +4,11 @@ const noDotFile = name => name[0] != '.'
 const getGroups = async () => (await readdir("./recipes-json")).filter(noDotFile)
 const getRecipes = async group => (await readdir(`./recipes-json/${group}`)).filter(noDotFile)
 
+const sanitizeName = name => name
+  .toLowerCase()
+  .replaceAll(/\s+/g, '_')
+  .replaceAll(/[^a-z0-9_]/g, '')
+
 const loadRecipes = async () => {
   let recipes = { }
 
@@ -22,7 +27,7 @@ const directoryContent = recipes => `
   <nav>
     <ul class="category-list">
       ${Object.keys(recipes).map( category => `
-        <a href="./recipes/${category}.html">
+        <a href="./recipes/${sanitizeName(category)}.html">
           <li class="category-link" data-category="${category}">${category}</li>
         </a>
       `).join('\n')}
@@ -46,7 +51,7 @@ const categoryContent = (category, recipes) => `
   <nav>
     <ul class="recipe-list">
       ${recipes[category].map( recipe => `
-        <a href="./${category}/${recipe.name}.html">
+        <a href="./${sanitizeName(category)}/${sanitizeName(recipe.name)}.html">
           <li class="recipe-link">${recipe.name}</li>
         </a>
       `).join('\n')}
@@ -56,13 +61,13 @@ const categoryContent = (category, recipes) => `
 `
 
 const createCategoryPage = async (category, recipes, template) => {
-  await mkdir(`./docs/recipes/${category}`)
+  await mkdir(`./docs/recipes/${sanitizeName(category)}`)
   let html = template
     .split("{{--TITLE--}}").join(`Karen's ${category}`)
     .split("{{--STYLES--}}").join("../static/styles.css")
     .split("{{--CONTENT--}}").join(categoryContent(category, recipes))
 
-  await writeFile(`./docs/recipes/${category}.html`, html)
+  await writeFile(`./docs/recipes/${sanitizeName(category)}.html`, html)
 }
 
 const recipeContent = (recipe, category) => `
@@ -93,7 +98,7 @@ const createRecipePage = async (recipe, category, template) => {
     .split("{{--STYLES--}}").join("../../static/styles.css")
     .split("{{--CONTENT--}}").join(recipeContent(recipe, category))
 
-  await writeFile(`./docs/recipes/${category}/${recipe.name}.html`, html)
+  await writeFile(`./docs/recipes/${sanitizeName(category)}/${sanitizeName(recipe.name)}.html`, html)
 }
 
 const run = async () => {
