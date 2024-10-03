@@ -67,21 +67,21 @@ const createCategoryPage = async (category, recipes, template) => {
 
 const recipeContent = (recipe, category) => `
 <main data-category="${category}">
-  <h3>${recipe.name}</h3>
+  <h2>${recipe.name}</h2>
   <content class="recipe-card">
     <section class="ingredients">
-      <ol>
+      <ul>
         ${recipe.ingredients.map( ingredient => `
           <li>${ingredient}</li>
         `).join('\n')}
-      </ol>
+      </ul>
     </section>
     <section class="instructions">
-      <ul>
+      <ol>
         ${recipe.instructions.map( instruction => `
           <li>${instruction}</li>
         `).join('\n')}
-      </ul>
+      </ol>
     </section>
   </content>
 </main>
