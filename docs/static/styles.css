@@ -7,6 +7,7 @@ html, body, main {
   background-color: #f3f3f3;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 main {
@@ -36,7 +37,6 @@ ul.category-list {
 }
 ul.category-list li.category-link {
   border: 3px solid grey;
-  /* box-shadow: 0px 4px 10px -5px rgba(0,0,0,0.75); */
   border-radius: 12px;
   padding: 12px;
   list-style: none;
