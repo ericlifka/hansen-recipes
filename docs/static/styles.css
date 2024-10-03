@@ -74,6 +74,7 @@ main[data-category] h1 {
 }
 
 main[data-category="Apps"] { background-color: rgb(228, 248, 255); }
+main[data-category="Apps"] ul.recipe-list li { background-color: rgb(157, 209, 225); }
 main[data-category="Apps"] h1,
 ul.category-list li.category-link[data-category="Apps"] {
   background-image: url("images/apps.png");
@@ -81,6 +82,7 @@ ul.category-list li.category-link[data-category="Apps"] {
 }
 
 main[data-category="Beef"] { background-color: rgb(255, 227, 227); }
+main[data-category="Beef"] ul.recipe-list li { background-color: rgb(250, 198, 198); }
 main[data-category="Beef"] h1,
 ul.category-list li.category-link[data-category="Beef"] {
   background-image: url("images/beef.jpg");
@@ -88,27 +90,31 @@ ul.category-list li.category-link[data-category="Beef"] {
 }
 
 main[data-category="Bread"] { background-color: rgb(240, 234, 222); }
+main[data-category="Bread"] ul.recipe-list li { background-color: rgb(214, 200, 172); }
 main[data-category="Bread"] h1,
 ul.category-list li.category-link[data-category="Bread"] {
   background-image: url("images/bread.png");
   border-color: rgb(136, 82, 0);
 }
 
-main[data-category="Breakfast"] { background-color: rgb(252, 248, 225); }
+main[data-category="Breakfast"] { background-color: rgb(251, 249, 236); }
+main[data-category="Breakfast"] ul.recipe-list li { background-color: rgb(224, 218, 185); }
 main[data-category="Breakfast"] h1,
 ul.category-list li.category-link[data-category="Breakfast"] {
   background-image: url("images/breakfast.png");
   border-color: rgb(251, 218, 0);
 }
 
-main[data-category="Chicken"] { background-color: rgb(255, 227, 254); }
+main[data-category="Chicken"] { background-color: rgb(252, 234, 252); }
+main[data-category="Chicken"] ul.recipe-list li { background-color: rgb(250, 202, 248); }
 main[data-category="Chicken"] h1,
 ul.category-list li.category-link[data-category="Chicken"] {
   background-image: url("images/chicken.jpg");
   border-color: rgb(255, 98, 247);
 }
 
-main[data-category="Dessert"] { background-color: rgb(242, 226, 250); }
+main[data-category="Dessert"] { background-color: rgb(246, 233, 253); }
+main[data-category="Dessert"] ul.recipe-list li { background-color: rgb(192, 155, 210); }
 main[data-category="Dessert"] h1,
 ul.category-list li.category-link[data-category="Dessert"] {
   background-image: url("images/dessert.jpg");
@@ -116,6 +122,7 @@ ul.category-list li.category-link[data-category="Dessert"] {
 }
 
 main[data-category="Fish"] { background-color: rgb(232, 228, 255); }
+main[data-category="Fish"] ul.recipe-list li { background-color: rgb(195, 185, 251); }
 main[data-category="Fish"] h1,
 ul.category-list li.category-link[data-category="Fish"] {
   background-image: url("images/fish.png");
@@ -123,6 +130,7 @@ ul.category-list li.category-link[data-category="Fish"] {
 }
 
 main[data-category="Holiday"] { background-color: rgb(226, 249, 227); }
+main[data-category="Holiday"] ul.recipe-list li { background-color: rgb(155, 211, 157); }
 main[data-category="Holiday"] h1,
 ul.category-list li.category-link[data-category="Holiday"] {
   background-image: url("images/holiday.png");
@@ -130,6 +138,7 @@ ul.category-list li.category-link[data-category="Holiday"] {
 }
 
 main[data-category="Pork"] { background-color: rgb(255, 227, 250); }
+main[data-category="Pork"] ul.recipe-list li { background-color: rgb(221, 166, 211); }
 main[data-category="Pork"] h1,
 ul.category-list li.category-link[data-category="Pork"] {
   background-image: url("images/pork.png");
@@ -137,6 +146,7 @@ ul.category-list li.category-link[data-category="Pork"] {
 }
 
 main[data-category="Salad"] { background-color: rgb(236, 254, 233); }
+main[data-category="Salad"] ul.recipe-list li { background-color: rgb(183, 219, 177); }
 main[data-category="Salad"] h1,
 ul.category-list li.category-link[data-category="Salad"] {
   background-image: url("images/salad.jpg");
@@ -144,6 +154,7 @@ ul.category-list li.category-link[data-category="Salad"] {
 }
 
 main[data-category="Sandwhiches"] { background-color: rgb(252, 234, 202); }
+main[data-category="Sandwhiches"] ul.recipe-list li { background-color: rgb(235, 200, 139); }
 main[data-category="Sandwhiches"] h1,
 ul.category-list li.category-link[data-category="Sandwhiches"] {
   background-image: url("images/sandwhiches.png");
@@ -151,6 +162,7 @@ ul.category-list li.category-link[data-category="Sandwhiches"] {
 }
 
 main[data-category="Sides"] { background-color: rgb(246, 212, 252); }
+main[data-category="Sides"] ul.recipe-list li { background-color: rgb(208, 147, 219); }
 main[data-category="Sides"] h1,
 ul.category-list li.category-link[data-category="Sides"] {
   background-image: url("images/sides.png");
@@ -158,6 +170,7 @@ ul.category-list li.category-link[data-category="Sides"] {
 }
 
 main[data-category="Soup"] { background-color: rgb(255, 224, 229); }
+main[data-category="Soup"] ul.recipe-list li { background-color: rgb(217, 143, 156); }
 main[data-category="Soup"] h1,
 ul.category-list li.category-link[data-category="Soup"] {
   background-image: url("images/soup.jpg");
@@ -165,8 +178,28 @@ ul.category-list li.category-link[data-category="Soup"] {
 }
 
 main[data-category="Veggies"] { background-color: rgb(233, 255, 234); }
+main[data-category="Veggies"] ul.recipe-list li { background-color: rgb(151, 215, 154); }
 main[data-category="Veggies"] h1,
 ul.category-list li.category-link[data-category="Veggies"] {
   background-image: url("images/veggies.png");
   border-color: rgb(0, 119, 6);
+}
+
+ul.recipe-list {
+  margin: 0;
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+ul.recipe-list li.recipe-link {
+  list-style: none;
+  padding: 8px 16px;
+  margin: 8px 8px;
+  border-radius: 8px;
+  background-color: #ccc;
+}
+
+ul.recipe-list a {
+  text-decoration: none;
+  color: #555;
 }
